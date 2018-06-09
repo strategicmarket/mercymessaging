@@ -1,0 +1,341 @@
+
+{
+    "description": "sample data object as of 5-17-18",
+   "message": {
+          "PostDate": {
+              "$date": "2018-03-20T19:39:16.253Z"
+          },
+          "ChaoticSid": "5ff64be0-2c76-11e8-bd71-d33fc4c1c97a",
+          "MessageSid": "5ff5fdc0-2c76-11e8-bd71-d33fc4c1c97a",
+          "SmsSid": "5ff624d0-2c76-11e8-bd71-d33fc4c1c97a",
+          "AccountSid": "5ff624d1-2c76-11e8-bd71-d33fc4c1c97a",
+          "MessagingServiceSid": "5ff624d2-2c76-11e8-bd71-d33fc4c1c97a",
+          "From": "+19145005391",
+          "To": "+19802294921",
+          "Body": "hello world",
+          "NumMedia": "",
+          "NumSegments": "",
+          "MediaContentType": " ",
+          "MediaUrl": " ",
+          "FromCity": "Charlotte",
+          "FromState": "NC",
+          "FromZip": "28222",
+          "FromCounty": "USA",
+          "SmsStatus": "",
+          "ToCity": "Charlotte",
+          "ToState": "NC",
+          "ToZip": "28222",
+          "ToCountry": "USA",
+          "AddOns": " ",
+          "ApiVersion": "v1",
+          "ChaoticSource": "web"
+      },
+      "member": {
+      "firstname": "Jane",
+      "lastname": "Noder",
+      "image": "https://randomuser.me/api/portraits/lego/0.jpg",
+      "addr1": "200 Main Street",
+      "addr2": "apt 100",
+      "city": "Charlotte",
+      "state": "NC",
+      "zip": "28211",
+      "cell": "+19145005391",
+      "email": "pat@gmail.com",
+      "isAuthenticated": true,
+      "isActive": true,
+      "joindate": "2018-03-20T19:39:16.253Z"
+    },
+      "machine": {
+          "name": "banter",
+          "thisState": "echo",
+          "msg": "NONE",
+          "isValid": true,
+          "thisSlot": 0
+      },
+      "agent": {
+          "priority": 1,
+          "skills": [
+              {
+                  "skillname": "echo",
+                  "skilltype": "api",
+                  "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo.json"
+              },
+              {
+                  "skillname": "echo2",
+                  "skilltype": "api",
+                  "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo2.json"
+              },
+              {
+                 "skillname": "echo3",
+                  "skilltype": "api",
+                  "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo3.json"
+              },
+              {
+                 "skillname": "echo4",
+                  "skilltype": "api",
+                  "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo4.json"
+              }
+          ],
+          "postdate": {
+              "$date": "2018-03-20T19:33:47.151Z"
+          },
+          "id": "9ab83787-2c75-11e8-bcf9-c78966364a1c",
+          "name": "banter",
+          "avatar": "https://www.gravatar.com/avatar/",
+          "greeting": "Lets talk",
+          "handle": "cb-dev-banter",
+          "handler": "openwhisk"
+      },
+      "classifier": {
+          "orgclassification": {
+              "classifier_id": "2fbbc6x326-nlc-14",
+              "url": "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/2fbbc6x326-nlc-14",
+              "text": "hello world",
+              "top_class": "banter",
+              "classes": [
+                  {
+                      "class_name": "banter",
+                      "confidence": 0.8815110748960712
+                  },
+                  {
+                      "class_name": "sms",
+                      "confidence": 0.023857950140080467
+                  },
+                  {
+                      "class_name": "news",
+                      "confidence": 0.01959267040945525
+                  },
+                  {
+                      "class_name": "wat",
+                      "confidence": 0.01608992941638568
+                  },
+                  {
+                      "class_name": "product",
+                      "confidence": 0.013752833213773364
+                  },
+                  {
+                      "class_name": "close",
+                      "confidence": 0.012700357296982018
+                  },
+                  {
+                      "class_name": "location",
+                      "confidence": 0.012616774646336282
+                  },
+                  {
+                      "class_name": "music",
+                      "confidence": 0.008500548065145504
+                  },
+                  {
+                      "class_name": "help",
+                      "confidence": 0.006133811317341328
+                  },
+                  {
+                      "class_name": "blockchain",
+                      "confidence": 0.005244050598428792
+                  }
+              ]
+          },
+          "topclass": "music",
+          "confidence": 0.88,
+          "percent": "88%"
+      },
+      "response": {
+          "reply": [ ],
+          "machine": {
+              "name": "UNKNOWN",
+              "description": "FUTURE - DYNAMIC ROUTING",
+              "nextState": "UNKNOWN",
+              "msg": "NONE",
+              "isValid": true
+          },
+          "status": {
+              "isNewInteraction": false,
+              "isCallback": false,
+              "isTerminated": false,
+              "isError": false,
+              "isAuthenticated": false,
+              "isAuthorized": false
+          },
+          "sender": "echo",
+          "orgmessage": {
+              "meter": [
+                  {
+                      "skill": "echo",
+                      "cnt": 1
+                  }
+              ],
+              "__ow_method": "post",
+              "agent": {
+                  "name": "banter",
+                  "priority": 1,
+                  "avatar": "https://www.gravatar.com/avatar/",
+                  "_id": "5ab1621bc0d71a2b2069c7d8",
+                  "postdate": "2018-03-20T19:33:47.151Z",
+                  "id": "9ab83787-2c75-11e8-bcf9-c78966364a1c",
+                  "greeting": "Lets talk",
+                  "skills": [
+                      {
+                          "_id": "5ab1621bc0d71a2b2069c7dc",
+                          "skillname": "echo",
+                          "skilltype": "api",
+                          "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo.json"
+                      },
+                      {
+                          "_id": "5ab1621bc0d71a2b2069c7db",
+                          "skillname": "echo2",
+                          "skilltype": "api",
+                          "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo2.json"
+                      },
+                      {
+                          "_id": "5ab1621bc0d71a2b2069c7da",
+                          "skillname": "echo3",
+                          "skilltype": "api",
+                          "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo3.json"
+                      },
+                      {
+                          "_id": "5ab1621bc0d71a2b2069c7d9",
+                          "skillname": "echo4",
+                          "skilltype": "api",
+                          "skillsource": "https://openwhisk.ng.bluemix.net/api/v1/web/patrick.howard@hotmail.com_dev/default/cb-dev-echo4.json"
+                      }
+                  ],
+                  "__v": 0,
+                  "handler": "openwhisk",
+                  "handle": "cb-dev-banter"
+              },
+              "dialogue": {
+                  "sequenceCnt": 1
+              },
+              "response": {
+                  "reply": []
+              },
+              "machine": {
+                  "name": "banter",
+                  "thisState": "echo",
+                  "thisSlot": 0
+              },
+              "__ow_headers": {
+                  "accept": "application/json",
+                  "x-client-ip": "172.72.49.66",
+                  "x-forwarded-proto": "https",
+                  "host": "openwhisk.ng.bluemix.net:443",
+                  "content-type": "application/json",
+                  "via": "1.1 BwAAAMAfDQA-",
+                  "x-global-transaction-id": "29682393",
+                  "x-forwarded-for": "172.72.49.66"
+              },
+              "status": {
+                  "isNewInteraction": false
+              },
+              "__ow_path": "",
+              "message": {
+                  "ToCountry": "USA",
+                  "FromCounty": "USA",
+                  "ToState": "NC",
+                  "MediaUrl": " ",
+                  "NumMedia": "",
+                  "ToCity": "Charlotte",
+                  "FromZip": "28222",
+                  "SmsSid": "5ff624d0-2c76-11e8-bd71-d33fc4c1c97a",
+                  "ChaoticSource": "web",
+                  "FromState": "NC",
+                  "SmsStatus": "",
+                  "ChaoticSid": "5ff64be0-2c76-11e8-bd71-d33fc4c1c97a",
+                  "FromCity": "Charlotte",
+                  "Body": "hello world",
+                  "To": "+19802294921",
+                  "MessagingServiceSid": "5ff624d2-2c76-11e8-bd71-d33fc4c1c97a",
+                  "ToZip": "28222",
+                  "AddOns": " ",
+                  "NumSegments": "",
+                  "MediaContentType": " ",
+                  "MessageSid": "5ff5fdc0-2c76-11e8-bd71-d33fc4c1c97a",
+                  "AccountSid": "5ff624d1-2c76-11e8-bd71-d33fc4c1c97a",
+                  "Token": "demo",
+                  "From": "+19145005391",
+                  "ApiVersion": "v1",
+                  "PostDate": 1521574756253
+              },
+              "classifier": {
+                  "orgclassification": {
+                      "classes": [
+                          {
+                              "class_name": "banter",
+                              "confidence": 0.8815110748960712
+                          },
+                          {
+                              "class_name": "sms",
+                              "confidence": 0.023857950140080467
+                          },
+                          {
+                              "class_name": "news",
+                              "confidence": 0.01959267040945525
+                          },
+                          {
+                              "class_name": "wat",
+                              "confidence": 0.01608992941638568
+                          },
+                          {
+                              "class_name": "product",
+                              "confidence": 0.013752833213773364
+                          },
+                          {
+                              "class_name": "close",
+                              "confidence": 0.012700357296982018
+                          },
+                          {
+                              "class_name": "location",
+                              "confidence": 0.012616774646336282
+                          },
+                          {
+                              "class_name": "music",
+                              "confidence": 0.008500548065145504
+                          },
+                          {
+                              "class_name": "help",
+                              "confidence": 0.006133811317341328
+                          },
+                          {
+                              "class_name": "blockchain",
+                              "confidence": 0.005244050598428792
+                          }
+                      ],
+                      "url": "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/2fbbc6x326-nlc-14",
+                      "text": "hello world",
+                      "classifier_id": "2fbbc6x326-nlc-14",
+                      "top_class": "banter"
+                  },
+                  "topclass": "banter",
+                  "confidence": 0.88,
+                  "percent": "88%"
+              },
+              "org": "Strategic Machines"
+          }
+      },
+      "status": {
+          "isNewInteraction": false,
+          "isCallback": false,
+          "isTerminated": false,
+          "isError": false,
+          "isAuthenticated": false,
+          "isAuthorized": false,
+          "ErrorMsg": {}
+      },
+      "dialogue": {
+          "priorInteract": "START",
+          "sequenceCnt": 1
+      },
+      "meter": [
+          {
+              "skill": "echo",
+              "cnt": 1
+          }
+      ],
+      "postdate": {
+          "$date": "2018-03-20T19:38:20.755Z"
+      },
+      "id": "3ee1d232-2c76-11e8-91c2-77c7ba3dcb3e",
+      "org": "Strategic Machines",
+      "__v": 0
+  }
+  
