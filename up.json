@@ -1,9 +1,14 @@
 {
     "name": "aws-mercy",
     "profile": "myaccount",
-    "regions": ["us-west-2"],
+    "regions": ["us-east-1"],
     "stages": {
         "development": {
+            "proxy": {
+                "command": "node mercy.js"
+            }
+        },
+        "staging": {
             "proxy": {
                 "command": "node mercy.js"
             }
