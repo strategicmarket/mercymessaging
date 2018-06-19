@@ -1,7 +1,8 @@
-const { machine } = require('./constructor');
+const { createMachine } = require('@xmachina/message');
 const http = require('http');
-
 const { PORT = 3000 } = process.env;
+
+const machine = createMachine();
 
 http.createServer(async (req, res) => {
   let body = '';
@@ -25,7 +26,7 @@ function main(obj) {
           let result = {};
           console.log("---------AWS----------")
 
-          machine()
+          machine
             .then((o) => {        
               o.updateWorkObj(obj);
               // grab a copy of the validated data object

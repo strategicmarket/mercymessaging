@@ -1,0 +1,26 @@
+{
+  "name": "mercymessaging",
+  "version": "1.0.0",
+  "description": "Mercy Church messaging service deployed to an AWS lambda instance using Apex.sh tool \"up\".",
+  "main": "mercy.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strategicmarket/mercymessaging.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strategicmarket/mercymessaging/issues"
+  },
+  "homepage": "https://github.com/strategicmarket/mercymessaging#readme",
+  "dependencies": {
+    "@xmachina/message": "^1.0.4"
+  }
+}
