@@ -1,8 +1,7 @@
 const { createMachine } = require('@xmachina/message');
 const http = require('http');
 const { PORT = 3000 } = process.env;
-
-const machine = createMachine();
+const util = require('util');
 
 http.createServer(async (req, res) => {
   let body = '';
@@ -12,47 +11,92 @@ http.createServer(async (req, res) => {
   });
 
   req.on('end', async () => {
-    const reply = await main(JSON.parse(body));
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(JSON.stringify(reply));
+    try {
+      const reply = await main(JSON.parse(body));
+      res.writeHead(200, {'Content-Type': 'application/json'});
+      isCyclic(reply);
+      res.write(JSON.stringify(reply));
+    } catch (error) {
+      console.log(error);
+      res.writeHead(500, {'Content-Type': 'application/json'});
+      res.write(JSON.stringify(error));
+    }
     res.end();
   });
   
 }).listen(PORT);
 
 
-function main(obj) {
-  return new Promise (function(resolve, reject){
-          let result = {};
-          console.log("---------AWS----------")
+/*
+m.updateWorkObj(obj)         // intialize work object with schema model
 
-          machine
-            .then((o) => {        
-              o.updateWorkObj(obj);
-              // grab a copy of the validated data object
-              const args = o.getWorkObj();
-              // begin to construct the response object
-              result.sender = args.message.From
-              result.orgmessage = args
-              // get the agent response
-              result.reply = [];
-              o.setWatsonClassification(args.classifier.orgclassification);
+             let args = m.getWorkObj()
+             // begin to construct the response object
+             result.sender = args.message.From
+             result.orgmessage = args
+             // get the agent response
+             result.reply = []
 
-              getMessage(args, (response) => {
-                result.reply = response.slice()
-                  o.setAgentReply(result)
-                  let newObj = o.getWorkObj()
-                  resolve(newObj)
-              });
+             wat(args, (response) => {
+                 result.reply = response.slice()
+                 m.setResponse(result)
+                 let newObj = m.getWorkObj()
+                 resolve(newObj)
+                 //return
+             })
 
-            })
-             .catch((e) => {
-                console.log("Experiment failed")
-                console.log(e)
-                reject(e)
-          })
-    })
+*/
+
+async function main(obj) {
+  return new Promise (function(resolve, reject) {
+    try {
+      let result = {};
+  
+      // initialize object for interrogating input.
+      const machine = createMachine();
+      machine.updateWorkObj(obj);
+  
+      // grab a copy of the validated data object
+      const args = machine.getWorkObj();
+  
+      // begin to construct the response object
+      result.sender = args.message.From;
+      result.orgmessage = args;
+      result.reply = [];
+  
+      getMessage(args, (response) => {
+        result.reply = response.slice();
+        machine.setResponse(result);
+        let newObj = machine.getWorkObj();
+        resolve(newObj);
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
+
+function isCyclic (obj) {
+  var seenObjects = [];
+
+  function detect (obj) {
+    if (obj && typeof obj === 'object') {
+      if (seenObjects.indexOf(obj) !== -1) {
+        return true;
+      }
+      seenObjects.push(obj);
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key) && detect(obj[key])) {
+          console.log(obj, 'cycle at ' + key);
+          return true;
+        }
+      }
+    }
+    return false;
   }
+
+  return detect(obj);
+}
 
 const getMessage = (args, cb) => {
   const response = [];
@@ -165,7 +209,7 @@ const getMessage = (args, cb) => {
       phrases.push('I did not understand your request. Please contact support.');
       break;
   }
-  msg.msg = phrases[getRandomInt(phrases.length - 1)];
+  msg.phrase = phrases[getRandomInt(phrases.length - 1)];
   response.push(msg);
   cb(response);
 };

@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/strategicmarket/mercymessaging#readme",
   "dependencies": {
-    "@xmachina/message": "^1.0.4"
+    "@xmachina/message": "^1.0.5"
   }
 }
