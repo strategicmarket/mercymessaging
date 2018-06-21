@@ -13,3 +13,5 @@ Getting the app running on your local machine takes only a few steps:
 ## Testing The Service
 
 Once the app is running, simply make an HTTP POST to localhost:$PORT with the dataobject.json file in the examples directory. The service keys off of the classifier.topclass property on the JSON object. Changing this will alter the message returned in the response property of the JSON reply.
+
+For development, nodemon is used to enable "hot reloading." Make changes and simply save, and up will ensure the changes are loaded without requiring a manual restart.
