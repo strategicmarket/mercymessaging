@@ -5,12 +5,7 @@
     "stages": {
         "development": {
             "proxy": {
-                "command": "node mercy.js"
-            }
-        },
-        "staging": {
-            "proxy": {
-                "command": "node mercy.js"
+                "command": "nodemon app.js"
             }
         }
     }

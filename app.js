@@ -14,7 +14,6 @@ http.createServer(async (req, res) => {
     try {
       const reply = await main(JSON.parse(body));
       res.writeHead(200, {'Content-Type': 'application/json'});
-      isCyclic(reply);
       res.write(JSON.stringify(reply));
     } catch (error) {
       console.log(error);
@@ -25,27 +24,6 @@ http.createServer(async (req, res) => {
   });
   
 }).listen(PORT);
-
-
-/*
-m.updateWorkObj(obj)         // intialize work object with schema model
-
-             let args = m.getWorkObj()
-             // begin to construct the response object
-             result.sender = args.message.From
-             result.orgmessage = args
-             // get the agent response
-             result.reply = []
-
-             wat(args, (response) => {
-                 result.reply = response.slice()
-                 m.setResponse(result)
-                 let newObj = m.getWorkObj()
-                 resolve(newObj)
-                 //return
-             })
-
-*/
 
 async function main(obj) {
   return new Promise (function(resolve, reject) {
@@ -74,28 +52,6 @@ async function main(obj) {
       reject(error);
     }
   });
-}
-
-function isCyclic (obj) {
-  var seenObjects = [];
-
-  function detect (obj) {
-    if (obj && typeof obj === 'object') {
-      if (seenObjects.indexOf(obj) !== -1) {
-        return true;
-      }
-      seenObjects.push(obj);
-      for (var key in obj) {
-        if (obj.hasOwnProperty(key) && detect(obj[key])) {
-          console.log(obj, 'cycle at ' + key);
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-
-  return detect(obj);
 }
 
 const getMessage = (args, cb) => {
