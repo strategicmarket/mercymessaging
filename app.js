@@ -57,7 +57,8 @@ async function main(obj) {
 const getMessage = (args, cb) => {
   const response = [];
   const phrases = [];
-  const msg = {};
+  const msgLink = {};
+  const msgPhrase = {};
 
   switch(args.classifier.topclass.toLowerCase()) {
     case 'music':
@@ -65,11 +66,11 @@ const getMessage = (args, cb) => {
       phrases.push('Our God is forever faithful!');
       phrases.push('Worship our Lord!');
       phrases.push('Enjoy!');
-      msg.link = 'http://bit.ly/2CWpxCb';
+      msgLink.link = 'http://bit.ly/2CWpxCb';
       break;
     case 'message':
       phrases.push('here is the link to our sermon series');
-      msg.link = 'http://mercycharlotte.com/resources/all-series/';
+      msgLink.link = 'http://mercycharlotte.com/resources/all-series/';
       break;
     case 'banter':
       phrases.push('Hello! Welcome to Mercy Mobile');
@@ -90,47 +91,47 @@ const getMessage = (args, cb) => {
       break;
     case 'times':
       phrases.push('Our worship services are held at 9am and 11 am on Sunday, at the Levine Center in Matthews');
-      msg.link = 'http://mercycharlotte.com/about/worshipservices/';
+      msgLink.link = 'http://mercycharlotte.com/about/worshipservices/';
       break;
     case 'location':
       phrases.push('We hope to see you at Mercy Church. Check out the link for our location');
       phrases.push('Mercy Church meets in Matthews. Here is a link to find us!');
       phrases.push('We meet at the Levine Center in Matthews. Here is a google map for your reference');
-      msg.link = 'http://bit.ly/2wAUDeR';
+      msgLink.link = 'http://bit.ly/2wAUDeR';
       break;
     case 'mission':
       phrases.push('Thank you for your interest in serving. Please reference the attached link for short term mission trips');
-      msg.link = 'https://bit.ly/2qLtvd4';
+      msgLink.link = 'https://bit.ly/2qLtvd4';
       break;
     case 'beliefs':
       phrases.push('Please contact a member of our pastoral team if you have any additional questions about Mercy Church or our beliefs');
-      msg.link = 'http://mercycharlotte.com/about/beliefs/';
+      msgLink.link = 'http://mercycharlotte.com/about/beliefs/';
       break;
     case 'registerstartingpoint':
       phrases.push('Thank you for your interest in StartingPoint. We look forward to seeing you there!  Please RSVP by clicking on the attached link!');
-      msg.link = 'http://bit.ly/2B5hoKn';
+      msgLink.link = 'http://bit.ly/2B5hoKn';
       break;
     case 'whatisstartingpoint':
       phrases.push('Starting Point is your opportunity to learn more about the Mercy Community!');
-      msg.link = 'http://bit.ly/2CyOPad';
+      msgLink.link = 'http://bit.ly/2CyOPad';
       break;
     case 'whenisstartingpoint':
       phrases.push('Starting Point is held nearly every month. We hope to see you at the next one!');
       break;
     case 'whereisstartingpoint':
       phrases.push('Starting Point will be held at the Levine Senior Center');
-      msg.link = 'http://bit.ly/2wAUDeR';
+      msgLink.link = 'http://bit.ly/2wAUDeR';
       break;
     case 'childcarestartingpoint':
       phrases.push('Yes. Childcare is provided at starting point but you will need to register when open');
       break;
     case 'worship':
       phrases.push('Here is the link to the Mercy playlist on Spotify');
-      msg.link = 'http://spoti.fi/2FJ14SQ';
+      msgLink.link = 'http://spoti.fi/2FJ14SQ';
       break;
     case 'membership':
       phrases.push('Join us for Starting Point Weekend to learn more getting involved with the Mercy Community!');
-      msg.link = 'http://bit.ly/2CyOPad';
+      msgLink.link = 'http://bit.ly/2CyOPad';
       break;
     case 'member':
       phrases.push('Great! Do you need childcare for that evening?');
@@ -140,7 +141,7 @@ const getMessage = (args, cb) => {
       break;
     case 'memberchild':
       phrases.push('Tap the link to register for child care on member night');
-      msg.link = 'http://bit.ly/2B5M79Y';
+      msgLink.link = 'http://bit.ly/2B5M79Y';
       break;
     case 'close':
       phrases.push('Thanks!');
@@ -151,22 +152,23 @@ const getMessage = (args, cb) => {
       phrases.push('See you on Easter Sunday! Our new series will be exciting!');
       phrases.push('Let\'s worship our risen Lord on Easter! Check out the link for our new series!');
       phrases.push('Easter will be a glorious day of celebration! Bring a friend!');
-      msg.link = 'http://mercycharlotte.com/easter/';
+      msgLink.link = 'http://mercycharlotte.com/easter/';
       break;
     case 'music2':
       phrases.push('He\'s alive! Enjoy the newest single from Mercy Worship.');
-      msg.link = 'https://bit.ly/2GKg8TH';
+      msgLink.link = 'https://bit.ly/2GKg8TH';
       break;
     case 'serveweek':
       phrases.push('Enjoy serving our city! Please tap the link to sign up!');
-      msg.link = 'https://bit.ly/2FFCz7V';
+      msgLink.link = 'https://bit.ly/2FFCz7V';
       break;
     default:
       phrases.push('I did not understand your request. Please contact support.');
       break;
   }
-  msg.phrase = phrases[getRandomInt(phrases.length - 1)];
-  response.push(msg);
+  msgPhrase.phrase = phrases[getRandomInt(phrases.length - 1)];
+  response.push(msgPhrase);
+  response.push(msgLink);
   cb(response);
 };
 
