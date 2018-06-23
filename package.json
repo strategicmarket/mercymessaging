@@ -1,6 +1,6 @@
 {
   "name": "mercymessaging",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Mercy Church messaging service deployed to an AWS lambda instance using Apex.sh tool \"up\".",
   "main": "mercy.js",
   "directories": {
