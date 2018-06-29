@@ -57,6 +57,8 @@ async function main(obj) {
 const getMessage = (args, cb) => {
   const response = [];
   const phrases = [];
+
+  // send responses in separate objects.
   const msgLink = {};
   const msgPhrase = {};
 
