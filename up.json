@@ -2,10 +2,16 @@
     "name": "aws-mercy",
     "profile": "myaccount",
     "regions": ["us-east-1"],
+
     "stages": {
         "development": {
             "proxy": {
                 "command": "nodemon app.js"
+            }
+        },
+        "production": {
+            "hooks": {
+                "postdeploy": "npm version minor"
             }
         }
     }

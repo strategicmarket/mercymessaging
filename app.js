@@ -1,7 +1,6 @@
 const { createMachine } = require('@xmachina/message');
 const http = require('http');
 const { PORT = 3000 } = process.env;
-const util = require('util');
 
 http.createServer(async (req, res) => {
   let body = '';
