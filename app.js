@@ -169,7 +169,7 @@ const getMessage = (args, cb) => {
   }
   msgPhrase.phrase = phrases[getRandomInt(phrases.length - 1)];
   response.push(msgPhrase);
-  response.push(msgLink);
+  if (msgLink.link !== undefined) response.push(msgLink);
   cb(response);
 };
 
